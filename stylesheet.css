@@ -1,0 +1,105 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body{
+	background-image:url("bg.jpg");
+	margin: 0;
+}
+
+.container{
+	position:relative;
+	margin: 0;
+	top: 15vmin;
+	left: 20vmin;
+	background-color:#333333;
+	border-radius:25%/40%;
+	width:100vmin;
+	height:70vmin;
+	box-shadow:.7em .7em 2rem 1rem black,
+			   inset .2em .2em 2rem 1rem #111111;
+}
+
+#score{
+	position:fixed;
+	text-align:center;
+	width:100vw;
+	height:13vh;
+	background-color:black;
+	color:grey;
+	font-size:10vh;
+	font-family:Arial;
+	z-index:900;
+  transition: top .5s;
+}
+
+.button {
+	position:absolute;
+	height:40%;
+	width: 40%;
+	transition: background-color .1s, box-shadow .1s;
+}
+
+
+#redButton{
+	background-color:#990000;
+	top:8%;
+	left:8%;
+	border-radius:50% 20% 5% 20% ;
+	box-shadow:.1em .1em .2em #222222,
+		inset .2em .2em 2rem 1rem #992200;
+}
+
+#redButton:active, #redButton.redOn {
+	background-color:#ff0000;
+	box-shadow: .1em .1em .2em #222222,
+				inset .2em .2em 2rem .5rem #cc2200;
+}
+
+#blueButton{
+	border-radius:20% 5% 20% 50% ;
+	background-color:#000099;
+	top:53%;
+	left:8%;
+	box-shadow: .1em .1em .2em #222222,
+				inset .2em .2em 2rem 1rem #002299;
+}
+
+#blueButton:active, #blueButton.blueOn {
+	background-color:#0000ff;
+	box-shadow: .1em .1em .2em #222222,
+				inset .2em .2em 2rem .5rem #0022cc;
+}
+
+#greenButton{
+	border-radius:20% 50% 20% 5% ;
+	background-color:#009900;
+	top:8%;
+	left:52%;
+	box-shadow:.1em .1em .2em #222222,
+		inset .2em .2em 2rem 1rem #009922;
+}
+
+#greenButton:active, #greenButton.greenOn {
+	background-color:#00ff00;
+	box-shadow: .1em .1em .2em #222222,
+				inset .2em .2em 2rem .5rem #00cc22;
+}
+
+#yellowButton{
+	border-radius:5% 20% 50% 20% ;
+	background-color:#999900;
+	top:53%;
+	left:52%;
+	box-shadow:.1em .1em .2em #222222,
+		inset .2em .2em 2rem 1rem #999922;
+}
+#yellowButton:active, #yellowButton.yellowOn {
+	background-color:#ffff22;
+	box-shadow: .1em .1em .2em #222222,
+				inset .2em .2em 2rem .5rem #cccc22;
+}
