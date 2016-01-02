@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			function greet(message) { //give an intro message and wait for user click to start
 				allowMouse(false); //user shouldn't push any buttons yet
 				score.style['pointer-events'] = 'auto';
-				score.style.top = '44vh';
+				score.style.top = '49vh';
 				changeText(score, (message || "Click here to begin!"));	
 			}
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			function lose() {
 				turn = 0;
 				pattern = [];
-				window.setTimeout(greet.bind(null, 'Click here for another game'), defaultTimeOut );
+				window.setTimeout(greet.bind(null, 'Click here for more'), defaultTimeOut );
 			}
 
 			function playSequence(timeOut, seq) {

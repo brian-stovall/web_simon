@@ -14,12 +14,12 @@ body{
 .container{
 	position:relative;
 	margin: 0;
-	top: 15vmin;
-	left: 20vmin;
+	top: 21vh;
+	left: 15vw;
 	background-color:#333333;
 	border-radius:25%/40%;
-	width:100vmin;
-	height:70vmin;
+	width:70vw;
+	height:70vh;
 	box-shadow:.7em .7em 2rem 1rem black,
 			   inset .2em .2em 2rem 1rem #111111;
 }
@@ -28,7 +28,7 @@ body{
 	position:fixed;
 	text-align:center;
 	width:100vw;
-	height:13vh;
+	height:14vh;
 	background-color:black;
 	color:grey;
 	font-size:10vh;
