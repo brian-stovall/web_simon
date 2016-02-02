@@ -38,7 +38,7 @@ body{
 
 #lcd {
 	position:absolute;
-	top:15%;
+	top:25%;
 	padding-top:.5vh;
 	left:33%;
 	width:34%;
@@ -54,7 +54,7 @@ body{
 
 .centerButton {
 	position:absolute;
-	top:40%;
+	top:50%;
 	height:15%;
 	width:15%;
 	border: .3vw solid #222;
@@ -80,11 +80,12 @@ body{
 .centerLabel {
 	position:absolute;
 	font-size:2vw;
-	top:54%;
+	top:64%;
+	text-align:center;
 }
 
 #restartLabel {
-	left:1.5vw;
+	left:1.7vw;
 }
 
 #strictLabel {
