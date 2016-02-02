@@ -71,6 +71,12 @@ body{
 	background-color:purple;
 }
 
+#strictButton:active {
+}
+
+#restartButton:active {
+	background-color:#a222a2;
+}
 .centerLabel {
 	position:absolute;
 	font-size:2vw;

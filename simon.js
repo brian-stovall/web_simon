@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			//handle to the whole game
 			var gameBody = document.getElementById('container');
 			var score = document.getElementById('score');
+			var lcd = document.getElementById('lcd');
+			var strictButton = document.getElementById('strictButton');
+			var restartButton = document.getElementById('restartButton');
+			var strictLabel = document.getElementById('strictLabel');
 
 			//position the gameBody
 			gameBody.style.top = ((window.innerHeight - gameBody.offsetHeight +
@@ -29,7 +33,20 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			var defaultTimeOut = 500; //time between lights in ms
 			var guess; //holds the current guess
 			var turn = 0; //the current guess 'position' 
-			var isStrict = true; //whether or not the game is in 'strict' mode
+			var isStrict = false; //whether or not the game is in 'strict' mode
+
+			restartButton.addEventListener('click', function() {
+				pattern = [];
+				playNextRound();
+			});
+
+			strictButton.addEventListener('click', function() {
+				isStrict = !isStrict;
+				strictButton.style['background-color'] = 
+					(isStrict) ? '#ffc733' : 'orange'; 
+				strictLabel.style.color = 
+					(isStrict) ? 'yellow' : 'black';
+			});
 
 			score.addEventListener('click', function() {
 				score.style.top = '0';
@@ -117,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 
 			function playNextRound() {
 				pattern.push(Math.floor(Math.random()*4));
+				lcd.textContent = pattern.length;
 				playSequence(defaultTimeOut, pattern);
 			}
 
