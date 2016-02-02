@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			var defaultTimeOut = 500; //time between lights in ms
 			var guess; //holds the current guess
 			var turn = 0; //the current guess 'position' 
+			var isStrict = true; //whether or not the game is in 'strict' mode
 
 			score.addEventListener('click', function() {
 				score.style.top = '0';
@@ -78,11 +79,18 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			function lose() {
 				gameBody.className += ' animated shake';	
 				turn = 0;
-				pattern = [];
-				window.setTimeout(greet.bind(null, 'Click here for more'), defaultTimeOut );
+				if (isStrict) {
+					pattern = [];
+					window.setTimeout(greet.bind(null, 'Click here to start over.'), defaultTimeOut );
+				}
+				//we are not in strict mode
+				else {
+					window.setTimeout(playSequence, defaultTimeOut * 2.5, defaultTimeOut, pattern);
+				}
 			}
 
 			function playSequence(timeOut, seq) {
+				gameBody.className = '';
 				allowMouse(false);
 				changeText(score, 'Watch the pattern...');
 				window.setTimeout(function() {

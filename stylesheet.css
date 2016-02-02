@@ -36,6 +36,55 @@ body{
 	left:30%;
 }
 
+#lcd {
+	position:absolute;
+	top:15%;
+	padding-top:.5vh;
+	left:33%;
+	width:34%;
+	height:15%;
+	font-size:2vw;
+	text-align:center;
+	border-radius:10%;
+	border-color:#222;
+	border-size:2vw;
+	background-color:black;
+	color:#155;
+}
+
+.centerButton {
+	position:absolute;
+	top:40%;
+	height:15%;
+	width:15%;
+	border: .3vw solid #222;
+	border-radius:60%;
+}
+
+#strictButton {
+	left:67%;
+	background-color:orange;
+}
+
+#restartButton {
+	right:67%;
+	background-color:purple;
+}
+
+.centerLabel {
+	position:absolute;
+	font-size:2vw;
+	top:54%;
+}
+
+#restartLabel {
+	left:1.5vw;
+}
+
+#strictLabel {
+	left:58%;
+}
+
 #score{
 	position:fixed;
 	text-align:center;
