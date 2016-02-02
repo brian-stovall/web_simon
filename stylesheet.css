@@ -11,17 +11,29 @@ body{
 	margin: 0;
 }
 
-.container{
+#container{
 	position:relative;
 	margin: 0;
-	top: 21vh;
-	left: 15vw;
-	background-color:#333333;
-	border-radius:25%/40%;
-	width:70vw;
-	height:70vh;
+	background-color:#333;
+	border-radius:65%;
+	width:70vmin;
+	height:70vmin;
 	box-shadow:.7em .7em 2rem 1rem black,
 			   inset .2em .2em 2rem 1rem #111111;
+}
+
+#centerPanel {
+	position:relative;
+	background-color:#444;
+	border-color:#333;
+	border-width:2vmin;
+	border-style:solid;
+	border-radius:60%;
+	z-index:500;
+	height:40%;
+	width:40%;
+	top:30%;
+	left:30%;
 }
 
 #score{
@@ -31,7 +43,7 @@ body{
 	height:14vh;
 	background-color:black;
 	color:grey;
-	font-size:10vh;
+	font-size:7vw;
 	font-family:Arial;
 	z-index:900;
   transition: top .5s;
@@ -40,7 +52,7 @@ body{
 .button {
 	position:absolute;
 	height:40%;
-	width: 40%;
+	width:40%;
 	transition: background-color .1s, box-shadow .1s;
 }
 
@@ -49,7 +61,7 @@ body{
 	background-color:#990000;
 	top:8%;
 	left:8%;
-	border-radius:50% 20% 5% 20% ;
+	border-top-left-radius:95%;
 	box-shadow:.1em .1em .2em #222222,
 		inset .2em .2em 2rem 1rem #992200;
 }
@@ -61,7 +73,7 @@ body{
 }
 
 #blueButton{
-	border-radius:20% 5% 20% 50% ;
+	border-bottom-left-radius:95%;
 	background-color:#000099;
 	top:53%;
 	left:8%;
@@ -76,7 +88,7 @@ body{
 }
 
 #greenButton{
-	border-radius:20% 50% 20% 5% ;
+	border-top-right-radius:95%;
 	background-color:#009900;
 	top:8%;
 	left:52%;
@@ -91,7 +103,7 @@ body{
 }
 
 #yellowButton{
-	border-radius:5% 20% 50% 20% ;
+	border-bottom-right-radius:95%;
 	background-color:#999900;
 	top:53%;
 	left:52%;

@@ -1,5 +1,14 @@
 
 document.addEventListener('DOMContentLoaded', function Simon(){
+			//handle to the whole game
+			var gameBody = document.getElementById('container');
+			var score = document.getElementById('score');
+
+			//position the gameBody
+			gameBody.style.top = ((window.innerHeight - gameBody.offsetHeight +
+				score.offsetHeight)/2).toString() + 'px';
+			gameBody.style.left = ((window.innerWidth - gameBody.offsetWidth)/2).toString() + 'px';
+
 			//maps a color name to each button
 			var buttons = {'red':document.getElementById('redButton'),
 										 'blue':document.getElementById('blueButton'),
@@ -21,8 +30,6 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			var guess; //holds the current guess
 			var turn = 0; //the current guess 'position' 
 
-			var score = document.getElementById('score');
-
 			score.addEventListener('click', function() {
 				score.style.top = '0';
 				score.style['pointer-events'] = 'none';
@@ -42,11 +49,13 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 
 			function greet(message) { //give an intro message and wait for user click to start
 				allowMouse(false); //user shouldn't push any buttons yet
+				gameBody.className = '';
 				score.style['pointer-events'] = 'auto';
 				score.style.top = '49vh';
 				changeText(score, (message || "Click here to begin!"));	
 			}
 
+			//tests the user's guess after each turn
 			function testGuess() {
 				if (guess == pattern[turn]) {
 					turn++;
@@ -67,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function Simon(){
 			}
 			
 			function lose() {
+				gameBody.className += ' animated shake';	
 				turn = 0;
 				pattern = [];
 				window.setTimeout(greet.bind(null, 'Click here for more'), defaultTimeOut );
